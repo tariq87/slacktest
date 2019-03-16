@@ -5,7 +5,7 @@ require 'optparse'
 require 'yaml'
 
 USER = 'root'
-PASS = 'foobarbaz'
+PASS = 'REDACTED'
 
 def is_installed?(package, hosts)	
 	hosts.each do |host|

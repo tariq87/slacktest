@@ -1,0 +1,22 @@
+---
+Packages:
+  - name: apache2
+    action: install
+  - name: php5
+    action: install
+  - name: ruby
+    action: install
+
+Service:
+  - name: apache2
+    action: start
+
+File:
+  - name: /var/www/html/health.php
+    action: create
+    mode: 775
+    owner: root
+    content: | 
+       <?php header("Content-Type: text/plain"); 
+       echo "Hello, world!";
+    notify: apache2
